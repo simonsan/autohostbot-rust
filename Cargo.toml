@@ -1,6 +1,6 @@
 [package]
 name = "autohostbot-rust"
-version = "0.0.0"
+version = "0.1.0"
 authors = ["simonsan <simon@systemli.org>"]
 description = "Autohostbot in Rust for Twitch"
 edition = "2018"
@@ -24,14 +24,14 @@ exclude = [
     "credentials.rs",
 ]
 
+[package.metadata.release]
+upload-doc = true
+no-dev-version = true
+pre-release-commit-message = "Release {{crate_name}} {{version}} / {{date}}"
+
 [dependencies]
 libtwitch-rs = { git = "https://github.com/simonsan/libtwitch-rs" }
 
 [dev-dependencies]
 lazy_static = "1.4.0"
 pretty_assertions = "0.4.0"
-
-[package.metadata.release]
-upload-doc = true
-no-dev-version = true
-pre-release-commit-message = "Release {{crate_name}} {{version}} / {{date}}"
