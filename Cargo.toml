@@ -1,0 +1,37 @@
+[package]
+name = "autohostbot-rust"
+version = "0.0.0"
+authors = ["simonsan <simon@systemli.org>"]
+description = "Autohostbot in Rust for Twitch"
+edition = "2018"
+repository = "https://github.com/simonsan/autohostbot-rust"
+documentation = "https://docs.rs/autohostbot-rust/"
+readme = "README.md"
+keywords = ["twitch", "bot", "hosting",]
+license = "AGPL-3.0-or-later"
+maintenance = { status = "actively-developed" }
+
+include = [
+    "src/**/*",
+    "tests/**/*",
+    "Cargo.toml",
+    "License",
+    "legal/*",
+    "Readme.md",
+]
+exclude = [
+    "credentials.toml",
+    "credentials.rs",
+]
+
+[dependencies]
+libtwitch-rs = { git = "https://github.com/simonsan/libtwitch-rs" }
+
+[dev-dependencies]
+lazy_static = "1.4.0"
+pretty_assertions = "0.4.0"
+
+[package.metadata.release]
+upload-doc = true
+no-dev-version = true
+pre-release-commit-message = "Release {{crate_name}} {{version}} / {{date}}"
